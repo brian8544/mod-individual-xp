@@ -180,6 +180,7 @@ public:
         if (rate > MaxRate)
         {
             handler->PSendSysMessage(ACORE_STRING_MAX_RATE, MaxRate);
+            player->GetSession()->SendAreaTriggerMessage(ACORE_STRING_MAX_RATE, MaxRate);
             handler->SetSentErrorMessage(true);
             return false;
         }
